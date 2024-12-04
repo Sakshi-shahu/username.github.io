@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="tt.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">Vuexy</div>
+            <ul class="menu">
+                <li class="active">Dashboards</li>
+                <li>Analytics</li>
+                <li>CRM</li>
+                <li>eCommerce</li>
+                <li>Logistics</li>
+                <li>Academy</li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+            <header class="top-bar">
+                <input type="text" placeholder="Search (Ctrl+/)">
+                <div class="profile">👤</div>
+            </header>
+            <section class="dashboard">
+                <div class="widget analytics">
+                    <h3>Website Analytics</h3>
+                    <p>Total 28.5% Conversion Rate</p>
+                    <div class="stats">
+                        <span class="stats-left">12h Spend18 </span>
+<span class="stats-right">Order Size</span>
+    <span class="stats-right">127 Order, 2.3k Items</span>
+                       
+                    </div>
+                </div>
+                <div class="widget sales">
+                    <h3>Average Daily Sales</h3>
+                    <canvas id="salesChart"></canvas>
+                </div>
+                <div class="widget reports">
+                    <h3>Earning Reports</h3>
+                    <p>Weekly Earnings Overview</p>
+                    <div class="details">
+                        <span>$468</span>
+                        <span>+4.2%</span>
+                    </div>
+                </div>
+                <div class="widget support">
+                    <h3>Support Tracker</h3>
+                    <p>Last 7 Days</p>
+                    <div class="tracker">
+                        <span>164 Total Tickets</span>
+                        <span>85% Completed</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script >
+
+// script.js
+
+// Render a line chart for sales data
+const ctx = document.getElementById('salesChart').getContext('2d');
+const salesChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [
+            {
+                label: 'Sales',
+                data: [12000, 19000, 15000, 20000, 25000, 22000, 24000],
+                backgroundColor: 'rgba(108, 92, 231, 0.5)',
+                borderColor: '#6c5ce7',
+                borderWidth: 2,
+                fill: true,
+            },
+        ],
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+    },
+});
+
+</script>
+</body>
+</html>
